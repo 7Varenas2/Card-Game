@@ -397,6 +397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd0bc876a90e334c9302f955c28ca60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1Score: {fileID: 295499586}
+  player2Score: {fileID: 2029088110}
   gameManager: {fileID: 264698013}
   defaultCard: {fileID: 21300000, guid: e8bd35f6f5994834eadbdc5b202c0641, type: 3}
   slapButton: {fileID: 2824823}
@@ -428,6 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardsImages: []
+  currentCardIndex: 0
 --- !u!212 &264698017
 SpriteRenderer:
   m_ObjectHideFlags: 0

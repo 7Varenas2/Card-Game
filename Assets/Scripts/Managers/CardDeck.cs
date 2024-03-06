@@ -10,13 +10,12 @@ public class CardDeck : MonoBehaviour
     public List<Sprite> cardsImages = new List<Sprite>();
     private string folderPath = "deck-of-cards/Black Cards";// Path to set cards dynamically
 
-    private int currentCardIndex = 0;
+    public int currentCardIndex = 0;
 
     private void Start()
     {
         LoadCardSprites();
         ShuffleDeck();
-
     }
 
     // Display cards at random. Need to set up a number array or list (Might need to specify values) to compare

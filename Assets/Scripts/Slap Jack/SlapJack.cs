@@ -11,7 +11,7 @@ public class SlapJack : MonoBehaviour
     [SerializeField] private TextMeshProUGUI player2Score;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Sprite defaultCard;
-    [SerializeField] private AudioSource SFX;
+    [SerializeField] private AudioSource SFX, FlipSFX;
 
     Sprite topCard;
     Sprite bottomCard;
@@ -31,10 +31,12 @@ public class SlapJack : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.L))
         {
+            SFX.Play();
             Slapped(ref playerTwo);
         }
         if (Input.GetMouseButtonDown(0))
         {
+            FlipSFX.Play();
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
@@ -48,6 +50,7 @@ public class SlapJack : MonoBehaviour
 
     public void Flip()
     {
+        
         bottomCard = gameManager.cardDeck[0].GetCurrentCard();
         gameManager.cardDeck[0].ShuffleDeck();
         topCard = gameManager.cardDeck[0].GetCurrentCard();

@@ -11,6 +11,8 @@ public class War : MonoBehaviour
     [SerializeField] private TextMeshProUGUI p1Cards, p2Cards;
     [SerializeField] private GameObject deck;
     [SerializeField] private GameObject playAgain;
+    [SerializeField] private AudioSource SFX;
+
     private int playerOneCards = 0;
     private int playerTwoCards= 0;
 
@@ -110,7 +112,8 @@ public class War : MonoBehaviour
         else if (player1Rank == player2Rank)
         {
             Debug.Log("Are equal");
-            txt_Winner.SetText("Are Equal");
+            txt_Winner.SetText("WAR!!!");
+            SFX.Play();
         }
     }
 

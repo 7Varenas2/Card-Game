@@ -39,11 +39,10 @@ public class War : MonoBehaviour
 
     private int GetCardRank(Sprite cardSprite)
     {
-    
+        Debug.Log(cardSprite.name);
         //  GameManager.instance.cardDeck;
         string[] cardName = cardSprite.name.Split('_');
         string rankString = cardName[0]; // Getting the rank based on Val's naming convetion 4BCU = 4 black of clubs JBH = Jack black of Hearts
-
 
         int rankValue; // Parse to numeric value
 
@@ -87,6 +86,9 @@ public class War : MonoBehaviour
     {
         int player1Rank = GetCardRank(sprite1);
         int player2Rank = GetCardRank(sprite2);
+
+        Debug.Log("Player One Rank: " + player1Rank);
+        Debug.Log("Player Two Rank: " + player2Rank);
 
         if (player1Rank > player2Rank)
         {

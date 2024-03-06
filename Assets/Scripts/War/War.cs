@@ -9,6 +9,8 @@ public class War : MonoBehaviour
     private CardDeck cardPlayer1Deck, cardPlayer2Deck;
     [SerializeField] private Button player1Stack, player2Stack;
     [SerializeField] private TextMeshProUGUI p1Cards, p2Cards;
+    [SerializeField] private GameObject deck;
+    [SerializeField] private GameObject playAgain;
     private int playerOneCards = 0;
     private int playerTwoCards= 0;
 
@@ -74,6 +76,8 @@ public class War : MonoBehaviour
             }else if (playerTwoCards >= 52) {
                 txt_Winner.SetText("Player Two Wins!");
             }
+            deck.SetActive(false);
+            playAgain.SetActive(true);
             return true;
         }
         return false;

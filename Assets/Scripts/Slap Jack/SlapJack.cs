@@ -11,6 +11,8 @@ public class SlapJack : MonoBehaviour
     [SerializeField] private TextMeshProUGUI player2Score;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Sprite defaultCard;
+    [SerializeField] private AudioSource SFX;
+
     Sprite topCard;
     Sprite bottomCard;
     int points;
@@ -24,6 +26,7 @@ public class SlapJack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
+            SFX.Play();
             Slapped(ref playerOne);
         }
         else if (Input.GetKeyDown(KeyCode.L))
@@ -72,6 +75,7 @@ public class SlapJack : MonoBehaviour
 
     public void Slapped(ref int playerScore)
     {
+
         if (slappable)
         {
             playerScore += points;

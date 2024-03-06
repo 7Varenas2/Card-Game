@@ -316,6 +316,7 @@ MonoBehaviour:
   player1Score: {fileID: 295499586}
   player2Score: {fileID: 2029088110}
   gameManager: {fileID: 264698013}
+  defaultCard: {fileID: 21300000, guid: e8bd35f6f5994834eadbdc5b202c0641, type: 3}
   slapButton: {fileID: 2824823}
 --- !u!4 &264698015
 Transform:
@@ -500,7 +501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Player 1 Score:'
+  m_text: Player 1 Press "A"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1129,7 +1130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Player 2 Score:'
+  m_text: Player 2 Press "L"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

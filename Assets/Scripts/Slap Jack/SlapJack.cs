@@ -10,6 +10,7 @@ public class SlapJack : MonoBehaviour
     [SerializeField] private TextMeshProUGUI player1Score;
     [SerializeField] private TextMeshProUGUI player2Score;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private Sprite defaultCard;
     Sprite topCard;
     Sprite bottomCard;
     int points;
@@ -21,6 +22,14 @@ public class SlapJack : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Slapped(ref playerOne);
+        }
+        else if (Input.GetKeyDown(KeyCode.L))
+        {
+            Slapped(ref playerTwo);
+        }
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -30,10 +39,7 @@ public class SlapJack : MonoBehaviour
             {
                 Flip();
             }
-            else if (hit.collider.name.Equals("SlapButton"))
-            {
-                Slapped();
-            }
+            
         }
     }
 
@@ -55,6 +61,7 @@ public class SlapJack : MonoBehaviour
         {
             slappable = true;
             slapButton.SetActive(true);
+
         }
         else
         {
@@ -63,23 +70,24 @@ public class SlapJack : MonoBehaviour
         }
     }
 
-    public void Slapped()
+    public void Slapped(ref int playerScore)
     {
         if (slappable)
         {
-            playerOne += points;
+            playerScore += points;
             points = 0;
             
             slappable = false;
+            foreach (Sprite card in pile)
+            {
+                gameManager.cardDeck[0].cardsImages.Remove(card);
+            }
             CheckWin();
         }
-        foreach(Sprite card in pile)
-        {
-            gameManager.cardDeck[0].cardsImages.Remove(card);
-        }
-        
 
-        Flip();
+
+
+        gameObject.GetComponent<SpriteRenderer>().sprite = defaultCard;
         slapButton.SetActive(false);
     }
 
